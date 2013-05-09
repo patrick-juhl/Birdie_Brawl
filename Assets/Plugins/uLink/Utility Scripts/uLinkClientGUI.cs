@@ -8,7 +8,7 @@ public class uLinkClientGUI : uLink.MonoBehaviour
 {
 	public bool inputName = true;
 
-	public string quickText = "Play on Localhost";
+	public string quickText = "Connect";
 	public string quickHost = "127.0.0.1";
 	public int quickPort = 7100;
 
@@ -193,19 +193,19 @@ public class uLinkClientGUI : uLink.MonoBehaviour
 	{
 		if (inputName)
 		{
-			GUILayout.BeginHorizontal();
-			GUILayout.FlexibleSpace();
-			GUILayout.Label("Please enter your name:");
-			GUILayout.FlexibleSpace();
-			GUILayout.EndHorizontal();
-
-			GUILayout.BeginVertical();
-			GUILayout.Space(5);
-			GUILayout.EndVertical();
 
 			GUILayout.BeginHorizontal();
 			GUILayout.Space(10);
+			GUILayout.Label("Name:");
 			playerName = GUILayout.TextField(playerName, GUILayout.MinWidth(80));
+			GUILayout.Space(10);
+			GUILayout.EndHorizontal();
+
+			GUILayout.BeginHorizontal();
+			GUILayout.Space(10);
+			GUILayout.Label("Host:");
+			quickHost = GUILayout.TextField(quickHost, GUILayout.MinWidth(80));
+
 			GUILayout.Space(10);
 			GUILayout.EndHorizontal();
 
@@ -221,7 +221,6 @@ public class uLinkClientGUI : uLink.MonoBehaviour
 		{
 			Connect(quickHost, quickPort);
 		}
-
 		if (hasAdvancedMode)
 		{
 			GUILayout.FlexibleSpace();
