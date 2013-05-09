@@ -1,1 +1,6 @@
-Temp/
+obj
+Temp
+*.suo
+*.user
+*.pidb
+*.userprefs
