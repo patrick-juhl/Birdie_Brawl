@@ -1,0 +1,25 @@
+5/9/2013 6:46:51 PM, EDITOR uCollab process marker file not found. This is OK.
+5/9/2013 6:46:59 PM, EDITOR Stop called (already stopped)
+5/9/2013 6:47:06 PM, EDITOR User pressed button import
+5/9/2013 6:47:06 PM, EDITOR Import will now be started in the uCollab process
+09-05-2013 18:47:07, uCollab process started.
+09-05-2013 18:47:07, logFileName = .uCollab\uCollabLog.txt
+09-05-2013 18:47:07, unityEditorVersionNr = 4,1
+09-05-2013 18:47:07, masterFolder = C:/Users/student/Documents/BirdieBrawl
+09-05-2013 18:47:07, slaveFolder = C:\Users\student\Documents\BirdieBrawl
+09-05-2013 18:47:07, Parent pid (Unity Editor) = 7292
+09-05-2013 18:47:07, My own pid is = 4836
+09-05-2013 18:47:07, 
+Import started
+09-05-2013 18:47:07, imported: .\Assets\PlayerController.cs
+09-05-2013 18:47:07, import interrrupted by exception
+09-05-2013 18:47:07, System.IO.IOException: The process cannot access the file 'C:\Users\student\Documents\BirdieBrawl\.\Assets\PlayerController.cs' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite)
+   at #=qPt9YGWvB4YSFomBCb0nwYTD$nzNscniKhWquugFZnYE=.#=qSYjBFXEHRywq2GZ9mRo6v$_PZcV4ZYUG98c_L4r_dcg=(DirectoryInfo #=qaYyeWzho7NyFugOq_kj0Bw==, Dictionary`2 #=q7OU1jaEaldbZGzHkCTirdg==)
+09-05-2013 18:47:07, Fatal error: System.IO.IOException: The process cannot access the file 'C:\Users\student\Documents\BirdieBrawl\.\Assets\PlayerController.cs' because it is being used by another process.
+   at #=qPt9YGWvB4YSFomBCb0nwYTD$nzNscniKhWquugFZnYE=.#=qSYjBFXEHRywq2GZ9mRo6v$_PZcV4ZYUG98c_L4r_dcg=(DirectoryInfo #=qaYyeWzho7NyFugOq_kj0Bw==, Dictionary`2 #=q7OU1jaEaldbZGzHkCTirdg==)
+   at #=qPt9YGWvB4YSFomBCb0nwYTD$nzNscniKhWquugFZnYE=.#=qoauNT6x1TACe3PHfEDmRjg==(String #=qCkV02dU45wDGySdptqR22Q==)
+   at #=qun_kLoi9bG$zz2I$k3tx53ioSCyT1J0DZYgEuI1eLP8=.#=q_kp3i4GRLg0ayoREDfclPPtBmSWYFmeswyHEzybcMko=(String #=qnyoaXVAQOyo54aD91a34hQ==)
+   at #=qun_kLoi9bG$zz2I$k3tx53ioSCyT1J0DZYgEuI1eLP8=.#=q5dipXNzztuHmxg97057jbQ==(String[] #=qFqDzzpCIV5bBhtGD5DrH$A==)
+5/9/2013 6:51:28 PM, EDITOR uCollab process not found, deleting pid marker file. Can't find process with ID 4836
