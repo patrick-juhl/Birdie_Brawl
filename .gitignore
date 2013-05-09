@@ -4,3 +4,5 @@ Temp
 *.user
 *.pidb
 *.userprefs
+*.sln
+*.csproj
