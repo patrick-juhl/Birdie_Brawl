@@ -6,15 +6,16 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+
     private Vector3 lastPos;
     [SerializeField]
     private Vector3 velocity;
 
-    
+
 
 	// Use this for initialization
 	void Start () {
-	        
+
 	}
 	
 	// Update is called once per frame
