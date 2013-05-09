@@ -6,7 +6,11 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-
+	[SerializeField]
+	private GameObject BeatHandlerDirectionObject;
+	
+	private BeatHandlerDirection BeatHandlerDirection_;
+	
     private Vector3 lastPos;
     [SerializeField]
     private Vector3 velocity;
@@ -15,8 +19,9 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		BeatHandlerDirection_ = this.BeatHandlerDirectionObject.GetComponent<BeatHandlerDirection>();
 	}
+	
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,6 +34,27 @@ public class PlayerController : MonoBehaviour {
         this.rigidbody.AddForce(input * 5);
 
         lastPos = this.transform.position;
-
+		
+		// UpdateMusic(input);
+		UpdateMusic(this.rigidbody.velocity);
+	}
+	
+	void UpdateMusic(Vector3 input) {
+		
+		
+		if (Mathf.Abs(input.x) > Mathf.Abs(input.z))
+		{
+			if (input.x > 0.0f)
+				BeatHandlerDirection_.PlayNewBlockAfterThis(32);
+			else
+				BeatHandlerDirection_.PlayNewBlockAfterThis(33);
+		}
+		else
+		{
+			if (input.z > 0.0f)
+				BeatHandlerDirection_.PlayNewBlockAfterThis(34);
+			else
+				BeatHandlerDirection_.PlayNewBlockAfterThis(35);
+		}
 	}
 }
