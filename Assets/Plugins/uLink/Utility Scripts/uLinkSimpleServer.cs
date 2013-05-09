@@ -32,6 +32,7 @@ public class uLinkSimpleServer : uLink.MonoBehaviour
 		public GameObject ownerPrefab;
 		public GameObject proxyPrefab;
 		public GameObject serverPrefab;
+        public GameObject cube;
 
 		public bool appendLoginData = false;
 
