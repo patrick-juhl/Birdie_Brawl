@@ -66,6 +66,7 @@ public class BeatHandler : MonoBehaviour {
 		
 		current_beat_in_block = beat;
 
-		OnBeat(this, current_block, current_beat_in_block);
+		if (OnBeat != null)
+			OnBeat(this, current_block, current_beat_in_block);
 	}
 }

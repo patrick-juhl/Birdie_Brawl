@@ -27,11 +27,8 @@ public class BeatHandlerDirection : MonoBehaviour {
 		current_block = 0;
 		current_beat_in_block = -1;
 		current_block_start = 0;
-		next_block = 0;
 		
 		source_ = GetComponent<AudioSource>();
-		
-		PlayNewBlockAfterThis(22);
 	}
 
 	public void PlayNewBlockAfterThis(int new_block) {
@@ -66,6 +63,6 @@ public class BeatHandlerDirection : MonoBehaviour {
 		
 		current_beat_in_block = beat;
 
-		OnBeat(this, current_block, current_beat_in_block);
+		if (OnBeat != null) OnBeat(this, current_block, current_beat_in_block);
 	}
 }
