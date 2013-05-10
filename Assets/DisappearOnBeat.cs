@@ -19,6 +19,9 @@ public class DisappearOnBeat : MonoBehaviour {
 
 	void Handle_OnBeat (object sender, int section, int beat)
 	{
+		AudioSource source = (sender as MonoBehaviour).GetComponent<AudioSource>();
+		bool canshow = source.volume > 0.5;
+		
 		int b = beat % Tempo;
 		
 		if (b == Tempo - 1)
@@ -26,7 +29,8 @@ public class DisappearOnBeat : MonoBehaviour {
 		else if (b == 0)
 			Hide();
 		else if (b == Tempo/2)
-			Show();
+			if (canshow)
+				Show();
 	}
 	
 	void Warn() {
