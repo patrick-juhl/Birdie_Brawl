@@ -10,13 +10,13 @@ public class UpdateMusic : MonoBehaviour {
 	private MusicFilter MusicFilter_;
 	
 	[SerializeField]
-	private GameObject BeatHandlerDirectionObject;
+	private GameObject BeatHandlerObject;
 	
-	private BeatHandlerDirection BeatHandlerDirection_;
+	private BeatHandler BeatHandler_;
 
 	// Use this for initialization
 	void Start () {
-		BeatHandlerDirection_ = this.BeatHandlerDirectionObject.GetComponent<BeatHandlerDirection>();
+		BeatHandler_ = this.BeatHandlerObject.GetComponent<BeatHandler>();
 		MusicFilter_ = this.MusicFilterObject.GetComponent<MusicFilter>();
 	}
 	
@@ -61,16 +61,16 @@ public class UpdateMusic : MonoBehaviour {
 		if (Mathf.Abs(input.x) > Mathf.Abs(input.z))
 		{
 			if (input.x > 0.0f)
-				BeatHandlerDirection_.PlayNewBlockAfterThis(32);
+				BeatHandler_.PlayNewBlockAfterThis(32);
 			else
-				BeatHandlerDirection_.PlayNewBlockAfterThis(33);
+				BeatHandler_.PlayNewBlockAfterThis(33);
 		}
 		else
 		{
 			if (input.z > 0.0f)
-				BeatHandlerDirection_.PlayNewBlockAfterThis(34);
+				BeatHandler_.PlayNewBlockAfterThis(34);
 			else
-				BeatHandlerDirection_.PlayNewBlockAfterThis(35);
+				BeatHandler_.PlayNewBlockAfterThis(35);
 		}
 	}
 }

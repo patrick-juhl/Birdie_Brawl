@@ -8,13 +8,13 @@ public class DisappearOnBeat : MonoBehaviour {
 
 	
 	[SerializeField]
-	private GameObject BeatHandlerDirectionObject;
-	private BeatHandlerDirection BeatHandlerDirection_;
+	private GameObject BeatHandlerObject;
+	private BeatHandler BeatHandler_;
 	
 	// Use this for initialization
 	void Start () {
-		BeatHandlerDirection_ = this.BeatHandlerDirectionObject.GetComponent<BeatHandlerDirection>();
-		BeatHandlerDirection_.OnBeat += Handle_OnBeat;
+		BeatHandler_ = this.BeatHandlerObject.GetComponent<BeatHandler>();
+		BeatHandler_.OnBeat += Handle_OnBeat;
 	}
 
 	void Handle_OnBeat (object sender, int section, int beat)

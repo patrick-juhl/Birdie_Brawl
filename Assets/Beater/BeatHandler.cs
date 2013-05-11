@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent (typeof (AudioSource))]
 
-public class BeatHandlerDirection : MonoBehaviour {
+public class BeatHandler : MonoBehaviour {
 	
 	const float bpm = 2*150;
 	const float time_per_beat = 60 / bpm;
@@ -39,7 +39,6 @@ public class BeatHandlerDirection : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 		float relative_time = source_.time + delay - current_block_start;
 		
 		int update_beat_in_block = (int)(relative_time/time_per_beat);
@@ -63,6 +62,13 @@ public class BeatHandlerDirection : MonoBehaviour {
 		
 		current_beat_in_block = beat;
 
-		if (OnBeat != null) OnBeat(this, current_block, current_beat_in_block);
+		if (OnBeat != null)
+			OnBeat(this, current_block, current_beat_in_block);
+	}
+	
+	float beatTimeToBeat(int block, int beat) {
+		float beat_mark = (block*beats_per_block + beat)*time_per_beat;
+		float d = beat_mark - source_.time;
+		return d / time_per_beat;
 	}
 }
