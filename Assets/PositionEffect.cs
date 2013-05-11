@@ -20,9 +20,9 @@ public class PositionEffect : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		BeatKick_ = this.BeatKickObject.GetComponent<AudioSource>();
+		/*BeatKick_ = this.BeatKickObject.GetComponent<AudioSource>();
 		BeatSnare_ = this.BeatSnareObject.GetComponent<AudioSource>();
-		BeatSynth_ = this.BeatSynthObject.GetComponent<AudioSource>();
+		BeatSynth_ = this.BeatSynthObject.GetComponent<AudioSource>();*/
 	}
 	
 	
@@ -31,7 +31,7 @@ public class PositionEffect : MonoBehaviour {
 		Vector3 p = transform.position;
 		Vector3 v = rigidbody.velocity;
 		
-		float a = -1.0f + 2.0f*Mathf.Clamp01((p.z+10.0f)/10.0f);
+		/*float a = -1.0f + 2.0f*Mathf.Clamp01((p.z+10.0f)/10.0f);
 		float b = -1.0f + 2.0f*Mathf.Clamp01((p.x+10.0f)/10.0f);
 
 		BeatSnare_.volume = 1-Mathf.Abs(a);
@@ -43,6 +43,6 @@ public class PositionEffect : MonoBehaviour {
 		float pitch = 1.0f + 0.05f * BeatSynth_.volume;
 		BeatKick_.pitch = pitch;
 		BeatSnare_.pitch = pitch;
-		BeatSynth_.pitch = pitch;
+		BeatSynth_.pitch = pitch;*/
 	}
 }
