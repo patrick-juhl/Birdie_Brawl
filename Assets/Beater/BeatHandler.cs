@@ -33,7 +33,7 @@ public class BeatHandler : MonoBehaviour {
 
 	public void PlayNewBlockAfterThis(int new_block) {
 		next_block = new_block;
-		if (!source_.isPlaying)
+		if (source_ != null && !source_.isPlaying)
 			GotBeat(0);
 	}
 	
@@ -66,9 +66,15 @@ public class BeatHandler : MonoBehaviour {
 			OnBeat(this, current_block, current_beat_in_block);
 	}
 	
-	float beatTimeToBeat(int block, int beat) {
+	public float beatTimeToBeat(int block, int beat) {
 		float beat_mark = (block*beats_per_block + beat)*time_per_beat;
 		float d = beat_mark - source_.time;
-		return d / time_per_beat;
+		float d2 = d + beats_per_block*time_per_beat;
+		
+		
+		if (Mathf.Abs(d) < Mathf.Abs (d2))
+			return d / time_per_beat;
+		else
+			return d2 / time_per_beat;
 	}
 }
