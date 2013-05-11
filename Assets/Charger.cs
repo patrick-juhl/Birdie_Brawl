@@ -9,16 +9,16 @@ public class Charger : MonoBehaviour {
 	private int faps;
 		
 	[SerializeField]
-	private GameObject BeatHandlerDirectionObject;
-	private BeatHandlerDirection BeatHandlerDirection_;
+	private GameObject BeatHandlerObject;
+	private BeatHandler BeatHandler_;
 
 	// Use this for initialization
 	void Start () {
 		prevInput = new Vector3();
 		velocity = new Vector3(0,5,0);
 		faps = 0;
-		BeatHandlerDirection_ = this.BeatHandlerDirectionObject.GetComponent<BeatHandlerDirection>();
-		BeatHandlerDirection_.OnBeat += Handle_OnBeat;
+		BeatHandler_ = this.BeatHandlerObject.GetComponent<BeatHandler>();
+		BeatHandler_.OnBeat += Handle_OnBeat;
 	}
 
 	void Handle_OnBeat (object sender, int section, int beat)
